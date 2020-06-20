@@ -21,7 +21,7 @@ static void CannyThreshold(int, void*)
     blur( src_gray, detected_edges, Size(3,3) );
     Canny( detected_edges, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size );
     dst = Scalar::all(0);
-    src.copyTo( dst, detected_edges);
+    src_gray.copyTo( dst, detected_edges);
     imshow( window_name, dst );
 }
 
